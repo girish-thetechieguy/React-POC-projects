@@ -13,3 +13,10 @@ React with :
 ## 3. Tanstack Query 
 
 ## 4. ag-grid
+
+Commands: 
+
+npm create-react-app simple-basic_grid
+cd simple-basic_grid
+npm install --save ag-grid-community
+npm install --save ag-grid-react
