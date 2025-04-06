@@ -1,0 +1,16 @@
+/* src/App.css */
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+input {
+  margin: 5px;
+}
