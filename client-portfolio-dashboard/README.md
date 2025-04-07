@@ -12,6 +12,69 @@ Performance Report
 
 ![alt text](image-1.png)
 
+
+Unit test setup and execution:
+## Command: 
+npm install --save-dev jest jest-html-reports @testing-library/react @testing-library/jest-dom
+
+Add these scripts to your package.json:
+"scripts": {
+  "test": "react-scripts test --watchAll=false --coverage",
+  "test:report": "jest --coverage --json --outputFile=coverage/test-results.json",
+  "generate:report": "jest-html-reporter --inputPath=coverage/test-results.json --outputPath=coverage/test-report.html"
+}
+
+Create/modify jest.config.js in your project root:
+module.exports = {
+  collectCoverage: true,
+  coverageReporters: ['json', 'lcov', 'text', 'clover'],
+  coverageDirectory: 'coverage',
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  moduleNameMapper: {
+    '\\.(css|less)$': 'identity-obj-proxy'
+  }
+};
+
+Create jest-html-reporter.config.json:
+{
+  "pageTitle": "React Test Report",
+  "outputPath": "coverage/test-report.html",
+  "includeFailureMsg": true,
+  "includeConsoleLog": true,
+  "verbose": true
+}
+
+## Run Tests and Generate Reports
+Run tests with coverage:
+npm run test:report
+
+Generate HTML report:
+npm run generate:report
+
+(Optional) Combine into one command:
+npm run test:report && npm run generate:report
+
+Step 6: View Reports
+Your reports will be generated in the coverage folder:
+Open the HTML report:
+open coverage/test-report.html  # Mac
+
+
+For line-by-line coverage:
+open coverage/lcov-report/index.html
+
+
+Step 7: (Optional) Add More Report Formats
+For additional report types, install:
+npm install --save-dev jest-junit
+
+Update jest.config.js:
+reporters: [
+  'default',
+  ['jest-junit', { outputDirectory: 'coverage', outputName: 'junit.xml' }]
+]
+
 ## Available Scripts
 
 In the project directory, you can run:

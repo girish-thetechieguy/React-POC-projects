@@ -13,8 +13,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test": "react-scripts test --watchAll=false --coverage",
+    "test:report": "jest --coverage --json --outputFile=coverage/test-results.json",
+    "generate:report": "jest-html-reporter --inputPath=coverage/test-results.json --outputPath=coverage/test-report.html"
   },
   "eslintConfig": {
     "extends": [

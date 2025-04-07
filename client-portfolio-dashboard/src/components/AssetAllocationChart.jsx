@@ -49,7 +49,7 @@ const AssetAllocationChart = ({
   return (
     <div className="chart-container">
       <h3>Asset Allocation</h3>
-      <div className="chart-wrapper">
+      <div data-testid="pie-chart">
         <Pie data={chartData} options={options} />
       </div>
       <div className="chart-legend">

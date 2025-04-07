@@ -1,0 +1,10 @@
+# Example GitHub Actions
+- name: Run tests and generate report
+  run: |
+    npm run test:report
+    npm run generate:report
+- name: Upload report
+  uses: actions/upload-artifact@v2
+  with:
+    name: test-report
+    path: coverage/test-report.html

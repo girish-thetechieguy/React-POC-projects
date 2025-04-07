@@ -1,0 +1,7 @@
+{
+    "pageTitle": "React Test Report",
+    "outputPath": "coverage/test-report.html",
+    "includeFailureMsg": true,
+    "includeConsoleLog": true,
+    "verbose": true
+  }
