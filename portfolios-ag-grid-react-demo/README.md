@@ -3,6 +3,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Outputs:
+![alt text](<Screenshot 2025-04-09 at 1.47.23 AM.png>)
+
+Customise report:
 ![alt text](image.png)
 
 ## Available Scripts

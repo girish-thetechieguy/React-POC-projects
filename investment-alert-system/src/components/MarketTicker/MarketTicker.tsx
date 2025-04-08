@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './MarketTicker.module.css';
+import { MarketData } from '../../types/types';
 import { useWebSocket } from '../../hooks/useWebSocket';
 
 const MarketTicker: React.FC = () => {
