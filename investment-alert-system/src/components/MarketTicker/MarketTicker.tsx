@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './MarketTicker.module.css';
-import { MarketData } from '../../types/types';
 import { useWebSocket } from '../../hooks/useWebSocket';
 
 const MarketTicker: React.FC = () => {
-  const { data: marketData, isConnected } = useWebSocket('wss://stream.binance.com:9443/ws/!ticker@arr');
+  const { data: marketData, isConnected } = useWebSocket('wss://streamer.finance.yahoo.com');
   
   const getChangeClass = (change: number) => {
     return change > 0 ? styles.positive : change < 0 ? styles.negative : styles.neutral;
