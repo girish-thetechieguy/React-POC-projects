@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import PostsRQ from './components/PostsRQ';
-import PostDetailsRQ from './components/PostDetailsRQ';
-import PaginatedQueries from './components/PaginatedQueries';
-import InfiniteQueries from './components/InfiniteQueries';
+import PaginatedAdvisors from './components/advisor/PaginatedAdvisors';
+import PaginatedTeams from './components/team/PaginatedTeams';
+import PaginatedOffices from './components/office/PaginatedOffices';
+
 
 function App() {
 
@@ -13,19 +13,20 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/rq-posts">RQ Posts</Link>
+              <Link to="/advisors">Advisors</Link>
+            </li>
+            <li>
+              <Link to="/teams">Teams</Link>
+            </li>
+            <li>
+              <Link to="/offices">Offices</Link>
             </li>
           </ul>
         </nav>
         <Routes>
-        <Route exact path='/rq-posts' element={<PostsRQ />} />
-        <Route exact path='/advisors' element={<Advisors />} />
-        <Route exact path='/teams' element={<Teams />} />
-        <Route exact path='/offices' element={<Offices />} />
-          
-          <Route exact path='/rq-posts/:postId' element={<PostDetailsRQ />} />
-          <Route exact path='/paginated-fruits' element={<PaginatedQueries />} />
-          <Route exact path='/infinite-fruits' element={<InfiniteQueries />} />
+          <Route exact path='/advisors' element={<PaginatedAdvisors />} />
+          <Route exact path='/teams' element={<PaginatedTeams />} />
+          <Route exact path='/offices' element={<PaginatedOffices />} />
         </Routes>
 
       </div>

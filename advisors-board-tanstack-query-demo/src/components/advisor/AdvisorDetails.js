@@ -2,8 +2,8 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import { useParams } from "react-router-dom"
 
-const fetchPostDetails = (postId) => {
-    return axios.get(`http://localhost:4000/posts/${postId}`);
+const fetchAdvisorDetails = (postId) => {
+    return axios.get(`http://localhost:4000/advisors/${postId}`);
 }
 
 const PostDetailsRQ = () => {
@@ -11,8 +11,8 @@ const PostDetailsRQ = () => {
     const { postId } = useParams()
 
     const { data, isLoading, isError, error } = useQuery({
-        queryKey: ["posts", postId],
-        queryFn: () => fetchPostDetails(postId)
+        queryKey: ["advisors", postId],
+        queryFn: () => fetchAdvisorDetails(postId)
     })
 
 
@@ -28,9 +28,9 @@ const PostDetailsRQ = () => {
 
 
     return (
-        <div className="post-details-container">
-            <div className="post-details-title">{title}</div>
-            <div className="post-details-body">{body}</div>
+        <div className="advisor-details-container">
+            <div className="advisor-details-title">{title}</div>
+            <div className="advisor-details-body">{body}</div>
         </div>
     )
 }
